@@ -1,26 +1,25 @@
+/* General Styles */
 body {
     font-family: "Poppins", serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right bottom, #300a32, #431146, #57185b, #6c1f71, #812788, #8f3596, #9d42a5, #ac4fb4, #b663bd, #bf75c5, #c988ce, #d29ad6);
+    background: linear-gradient(to right, #3c3837, #201f20);
     text-align: center;
-    color: #201f20;
-    
+    color: #ffffff;
 }
 
-body, h1, a, button {
+h1, h2, a, button {
     margin: 0;
     padding: 0;
     font-family: "Poppins", serif;
     text-decoration: none;
     box-sizing: border-box;
-    
 }
 
 /* Header Styling */
 header {
-    background: #661d6a;
-    color: rgb(226, 221, 221);
+    background: #3c3837;
+    color: #ffffff;
     padding: 15px 20px;
     display: flex;
     justify-content: center;
@@ -33,34 +32,33 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: #7f4384;
-    padding: 5px;
-    border-radius: 5px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: rgb(226, 221, 221) ;
+    color: #ffffff;
     padding: 8px 12px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
-    background: linear-gradient(to right bottom, #300a32, #431146, #57185b, #6c1f71, #812788, #8f3596, #9d42a5, #ac4fb4, #b663bd, #bf75c5, #c988ce, #d29ad6);
-
+    background: rgba(255, 255, 255, 0.2);
 }
 
+/* Glassmorphism Card Effect */
 .projects {
     margin: 20px;
     display: grid;
@@ -70,44 +68,81 @@ header {
 }
 
 .project {
-    background: linear-gradient(to top, #721f76, #742678, #752c7a, #77327b, #78377d, #7f4384, #874f8b, #8e5a92, #9d6fa0, #ac84af, #bb9abd, #cab0cc);  
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(188, 132, 207, 0.707);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    text-align: left;
 }
 
 .project-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project h2 {
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .project a {
     display: inline-block;
     margin-top: 10px;
-    color: #e5eaee;
+    color: #3c3837;
+    padding: 10px 15px;
+    border-radius: 5px;
     text-decoration: none;
+    background-color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.project a:hover {
+    background-color: #3c3837;
+    color: #ffffff;
+}
+
+/* Footer */
 footer {
-    background: linear-gradient(to right bottom, #300a32, #431146, #57185b, #6c1f71, #812788, #8f3596, #9d42a5, #ac4fb4, #b663bd, #bf75c5, #c988ce, #d29ad6);
-    color: rgb(226, 221, 221);
-    padding: 5px 0;
+    background: #3c3837;
+    color: #ffffff;
+    padding: 10px 0;
     bottom: 0;
     width: 100%;
 }
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background: linear-gradient(to right bottom, #300a32, #431146, #57185b, #6c1f71, #812788, #8f3596, #9d42a5, #ac4fb4, #b663bd, #bf75c5, #c988ce, #d29ad6);
-    color: rgb(226, 221, 221);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+
+/* Media Queries */
+
+/* Small devices (up to 600px) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        padding: 15px;
+    }
 }
 
-.back-link:hover {
-    background-color: #69125a;
+/* Tablets (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
